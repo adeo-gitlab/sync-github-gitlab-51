@@ -1,0 +1,14 @@
+image: alpine:latest
+
+stages:
+  - hello
+
+Hello:
+  stage: hello
+  image: debian:stretch-slim
+  script:
+    - print "Job executed : $(date +'%m/%d/%Y %H:%M')"
+
+tags:
+    - adeo
+    - large
