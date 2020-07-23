@@ -1,0 +1,15 @@
+image: alpine:latest
+
+stages:
+  - hello
+
+Hello:
+  stage: hello
+  image: debian:stretch-slim
+  script:
+    - echo "Job executed at $(date +'%m/%d/%Y %H:%M')"
+    - TEMPO=$(shuf -i 10-180 -n 1)
+    - sleep $TEMPO
+  tags:
+    - adeo
+    - large
